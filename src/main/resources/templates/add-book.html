@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Add New Book</h1>
+    <form th:action="@{/books/save}" th:object="${book}" method="post">
+        <div class="form-group">
+            <label for="title">Book Title</label>
+            <input id="title" type="text" th:field="*{title}" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input id="price" type="number" step="0.01" min="0" th:field="*{price}" required>
+        </div>
+        <div class="form-group">
+            <label for="authorId">Author</label>
+            <select id="authorId" name="authorId" required>
+                <option value="" disabled selected>Select an author</option>
+                <option th:each="author : ${authors}" th:value="${author.id}" th:text="${author.name}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Save Book</button>
+        <a href="/books" class="cancel">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

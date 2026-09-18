@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 30px;
+    background: #f4f4f4;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+}
+
+h1 {
+    color: #24527a;
+}
+
+.btn,
+.edit,
+.delete,
+.cancel {
+    display: inline-block;
+    margin: 5px 3px;
+    padding: 9px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn {
+    border: 0;
+    color: white;
+    background: #24527a;
+    cursor: pointer;
+}
+
+.edit {
+    color: white;
+    background: #3b8d99;
+}
+
+.delete {
+    color: white;
+    background: #b84a4a;
+}
+
+.cancel {
+    color: #333;
+    background: #ddd;
+}
+
+table {
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    color: white;
+    background: #24527a;
+}
+
+.form-group {
+    margin: 18px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.error {
+    color: #b84a4a;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 700px;
+    }
+}

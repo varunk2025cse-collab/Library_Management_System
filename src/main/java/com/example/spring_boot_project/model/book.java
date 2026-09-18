@@ -23,7 +23,7 @@ public class book {
     @JsonIgnoreProperties("books")
     private author author;
 
-    protected book() {
+    public book() {
     }
 
     public book(String title, author author, double price) {

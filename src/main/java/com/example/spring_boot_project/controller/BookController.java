@@ -16,7 +16,7 @@ import com.example.spring_boot_project.services.BookService;
 
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/api/books")
 public class BookController {
     private final BookService service;
 
@@ -32,7 +32,7 @@ public class BookController {
     @PostMapping
     public book addBook(@RequestBody book newBook) {
         return service.addBook(newBook);
-    }
+    } 
     @PutMapping("/{id}")
     public book updateBook(@PathVariable Long id, @RequestBody book updatedBook) {
         return service.updateBook(id, updatedBook);
