@@ -28,8 +28,12 @@ public class authorService {
 	public author updateAuthor(Long id, author updatedAuthor) {
 		author existingAuthor = repository.findById(id).orElseThrow(() ->
 				new ResponseStatusException(HttpStatus.NOT_FOUND, "Author not found with id: " + id));
-		existingAuthor.setName(updatedAuthor.getName());
-		existingAuthor.setCountry(updatedAuthor.getCountry());
+		if (updatedAuthor.getName() != null) {
+			existingAuthor.setName(updatedAuthor.getName());
+		}
+		if (updatedAuthor.getCountry() != null) {
+			existingAuthor.setCountry(updatedAuthor.getCountry());
+		}
 		return repository.save(existingAuthor);
 	}
 
